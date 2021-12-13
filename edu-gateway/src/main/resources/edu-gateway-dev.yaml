@@ -1,0 +1,10 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: edu-ad
+          uri: lb://edu-ad
+          predicates:
+            - Path=/api/ad/**
+server:
+  port: 9000
