@@ -1,10 +1,11 @@
-package com.wl.doc.config;
+package com.wl.ad.config;
 
 import com.fasterxml.classmate.GenericType;
 import com.fasterxml.classmate.TypeResolver;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.env.Environment;
 import org.springframework.http.HttpHeaders;
 import org.springframework.web.context.request.async.DeferredResult;
 import springfox.documentation.builders.ApiInfoBuilder;
@@ -15,23 +16,23 @@ import springfox.documentation.service.*;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spi.service.contexts.SecurityContext;
 import springfox.documentation.spring.web.plugins.Docket;
-import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 import java.util.*;
 
 import static springfox.documentation.schema.AlternateTypeRules.newRule;
 
 /**
- * swagger接口文档配置
+ * 广告微服务swagger接口文档配置
  *
+ * @author dile
  */
-
 @Configuration
+@RequiredArgsConstructor
 public class SwaggerConfig {
-    // swagger接口界面访问路径 ：http://localhost:9800/swagger-ui.html  IP为机器的IP，端口号为工程的端口
 
-    @Autowired
-    private TypeResolver typeResolver;
+    private final TypeResolver typeResolver;
+
+    private final Environment environment;
 
     @Bean
     public Docket api() {
@@ -39,7 +40,7 @@ public class SwaggerConfig {
                 .apiInfo(apiInfo())
                 .select()
                 // api接口路径，即controller层路径
-                .apis(RequestHandlerSelectors.basePackage("com.wl.**.web"))
+                .apis(RequestHandlerSelectors.basePackage("com.wl.ad.web"))
                 // 指定路径处理PathSelectors.any()代表所有的路径（除了被@ApiIgnore指定的请求）
                 .paths(PathSelectors.any())
                 .build()
@@ -55,13 +56,16 @@ public class SwaggerConfig {
                 // 支持的协议
                 .protocols(newHashSet("https", "http"))
                 .securitySchemes(securitySchemes())
-                .securityContexts(securityContexts());
+                .securityContexts(securityContexts())
+                //是否启用swagger
+                .enable(Arrays.asList(environment.getActiveProfiles()).contains("dev"));
+
     }
 
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("后台用户管理api")
-                .description("后台用户管理接口")
+                .title("广告模块API")
+                .description("教育系统")
                 .version("2.0")
                 .build();
     }
@@ -69,7 +73,7 @@ public class SwaggerConfig {
     /**
      * 设置授权信息
      *
-     * @return
+     * @return /
      */
     private List<SecurityScheme> securitySchemes() {
         // 在请求头header添加一个名为Authorization的token
@@ -88,13 +92,14 @@ public class SwaggerConfig {
                                 )))
                         // 可通过配置正则表达式去排除一些不需要携带token访问的接口 这里不做特殊处理，全部接口访问都需要携带
                         // 比如.forPaths(PathSelectors.regex("^(?!auth).*$"))  对所有包含"auth"的接口不需要使用securitySchemes
-                        .forPaths(PathSelectors.any())
+                        .forPaths(PathSelectors.regex("^(?!/api/ad).*$"))
                         .build()
         );
     }
 
+
     @SafeVarargs
-    private final <T> Set<T> newHashSet(T... ts) {
+    private  <T> Set<T> newHashSet(T... ts) {
         if (ts.length > 0) {
             return new LinkedHashSet<>(Arrays.asList(ts));
         }

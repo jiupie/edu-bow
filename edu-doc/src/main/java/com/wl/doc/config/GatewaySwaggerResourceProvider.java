@@ -15,9 +15,7 @@ import java.util.*;
 
 /**
  * 以gateway方式聚合各个服务的swagger接口文档（还可以加入healthy，去逐个匹配healthy，判断是否存活，活的话加入SwaggerResource列表，否则不加入）
- *
- * @author lbj
- * @date 2020/09/22 18:25
+ * @author dile
  */
 @Primary
 @Component
@@ -65,7 +63,6 @@ public class GatewaySwaggerResourceProvider implements SwaggerResourcesProvider 
                 SwaggerResource swaggerResource = new SwaggerResource();
                 swaggerResource.setUrl(url);
                 swaggerResource.setName(instance);
-                //swaggerResource.setSwaggerVersion("3.0.3");
                 resources.add(swaggerResource);
             }
         });
