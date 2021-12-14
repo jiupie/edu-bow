@@ -1,4 +1,4 @@
-package com.wl.ad;
+package com.wl;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;

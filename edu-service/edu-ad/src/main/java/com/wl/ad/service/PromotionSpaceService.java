@@ -1,6 +1,6 @@
 package com.wl.ad.service;
 
-import com.wl.ad.domain.PromotionSpace;
+import com.wl.ad.dto.PromotionSpaceDTO;
 
 import java.util.List;
 
@@ -15,5 +15,19 @@ public interface PromotionSpaceService {
      *
      * @return /
      */
-    List<PromotionSpace> list();
+    List<PromotionSpaceDTO> list();
+
+    /**
+     * 通过spaceKey获取广告位广告
+     * @param spaceKey /
+     * @return /
+     */
+    List<PromotionSpaceDTO> getAdBySpaceKey(String[] spaceKey);
+
+    /**
+     * 更新或者新增广告位
+     * @param promotionSpaceDTO /
+     * @return /
+     */
+    PromotionSpaceDTO saveOrUpdateSpace(PromotionSpaceDTO promotionSpaceDTO);
 }

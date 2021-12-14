@@ -1,20 +1,20 @@
 package com.wl.ad.domain;
 
 import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
+import com.wl.common.base.BaseEntity;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
-import java.io.Serializable;
 import java.util.Date;
 
 /**
  * @author 南顾北衫
  */
+@EqualsAndHashCode(callSuper = true)
 @Data
-public class PromotionAd implements Serializable {
-
+public class PromotionAd extends BaseEntity {
 
     @TableId(type = IdType.AUTO)
     @ApiModelProperty("主键")
@@ -59,18 +59,9 @@ public class PromotionAd implements Serializable {
      */
     @ApiModelProperty("结束时间")
     private Date endTime;
+
     /**
-     *
-     */
-    @ApiModelProperty("")
-    private Date createTime;
-    /**
-     *
-     */
-    @ApiModelProperty("")
-    private Date updateTime;
-    /**
-     *状态
+     * 状态
      */
     @ApiModelProperty("状态")
     private Integer status;
@@ -80,11 +71,9 @@ public class PromotionAd implements Serializable {
     @ApiModelProperty("优先级")
     private Integer priority;
     /**
-     *
+     * 图片地址
      */
-    @ApiModelProperty("")
+    @ApiModelProperty("图片地址")
     private String img;
 
-    @TableField(exist = false)
-    private static final long serialVersionUID = 1L;
 }

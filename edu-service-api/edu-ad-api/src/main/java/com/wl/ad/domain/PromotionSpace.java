@@ -1,22 +1,22 @@
 package com.wl.ad.domain;
 
 import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableLogic;
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.wl.common.base.BaseEntity;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
-
-import java.io.Serializable;
-import java.util.Date;
+import lombok.EqualsAndHashCode;
 
 
 /**
  * @author 南顾北衫
  */
+@EqualsAndHashCode(callSuper = true)
 @TableName(value = "promotion_space")
 @Data
-public class PromotionSpace implements Serializable {
+public class PromotionSpace extends BaseEntity {
     /**
      *
      */
@@ -36,23 +36,10 @@ public class PromotionSpace implements Serializable {
     private String spaceKey;
 
     /**
-     * 创建时间
-     */
-    @ApiModelProperty("创建时间")
-    private Date createTime;
-
-    /**
-     * 更新时间
-     */
-    @ApiModelProperty("更新时间")
-    private Date updateTime;
-
-    /**
      * 是否删除
      */
+    @TableLogic
     @ApiModelProperty("是否删除")
     private Integer isDel;
 
-    @TableField(exist = false)
-    private static final long serialVersionUID = 1L;
 }
