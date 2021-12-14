@@ -22,5 +22,7 @@
             <artifactId>edu-ad-api</artifactId>
             <version>${edu.project.version}</version>
         </dependency>
+
+
     </dependencies>
 </project>

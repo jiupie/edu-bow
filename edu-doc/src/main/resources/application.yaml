@@ -1,0 +1,12 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: edu-ad
+          uri: lb://edu-ad
+          predicates:
+            - Path=/edu-ad/**
+          filters:
+            - StripPrefix=1
+server:
+  port: 9001
