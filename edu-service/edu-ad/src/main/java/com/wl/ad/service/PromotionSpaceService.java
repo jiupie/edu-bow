@@ -30,4 +30,10 @@ public interface PromotionSpaceService {
      * @return /
      */
     PromotionSpaceDTO saveOrUpdateSpace(PromotionSpaceDTO promotionSpaceDTO);
+
+    /**
+     * 删除
+     * @param id /
+     */
+    void deleteSpace(Integer id);
 }

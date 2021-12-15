@@ -22,6 +22,7 @@ public class TimeMetaObjectHandler implements MetaObjectHandler {
     @Override
     public void insertFill(MetaObject metaObject) {
         this.strictInsertFill(metaObject, "createTime", Date.class,new Date());
+        this.strictInsertFill(metaObject,"updateTime",Date.class,new Date());
     }
 
     /**

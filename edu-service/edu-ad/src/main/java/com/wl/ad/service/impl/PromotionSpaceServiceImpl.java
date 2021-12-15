@@ -58,9 +58,14 @@ public class PromotionSpaceServiceImpl implements PromotionSpaceService {
             promotionSpaceDao.insert(promotionSpace);
         } else {
             UpdateWrapper<PromotionSpace> updateWrapper = new UpdateWrapper<>();
-            updateWrapper.eq(true,"id", promotionSpace.getId());
+            updateWrapper.eq(true, "id", promotionSpace.getId());
             promotionSpaceDao.update(promotionSpace, updateWrapper);
         }
         return promotionSpaceMapper.toDto(promotionSpace);
+    }
+
+    @Override
+    public void deleteSpace(Integer id) {
+        promotionSpaceDao.deleteById(id);
     }
 }

@@ -14,7 +14,7 @@ CREATE TABLE `promotion_space` (
                                    `is_del` int DEFAULT '0',
                                    PRIMARY KEY (`id`) USING BTREE,
                                    KEY `promotion_space_key_isDel` (`space_key`,`is_del`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=172 DEFAULT CHARSET=utf8mb3 ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 ROW_FORMAT=COMPACT;
 
 
 -- ----------------------------
@@ -38,5 +38,5 @@ CREATE TABLE `promotion_ad` (
                                 `img` varchar(255) DEFAULT NULL,
                                 PRIMARY KEY (`id`) USING BTREE,
                                 KEY `promotion_ad_SEG` (`space_id`,`start_time`,`end_time`,`status`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=1090 DEFAULT CHARSET=utf8mb3 ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb3 ROW_FORMAT=COMPACT;
 
