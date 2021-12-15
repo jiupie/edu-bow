@@ -57,9 +57,7 @@ public class PromotionSpaceServiceImpl implements PromotionSpaceService {
         if (Objects.isNull(promotionSpaceDTO.getId())) {
             promotionSpaceDao.insert(promotionSpace);
         } else {
-            UpdateWrapper<PromotionSpace> updateWrapper = new UpdateWrapper<>();
-            updateWrapper.eq(true, "id", promotionSpace.getId());
-            promotionSpaceDao.update(promotionSpace, updateWrapper);
+            promotionSpaceDao.updateById(promotionSpace);
         }
         return promotionSpaceMapper.toDto(promotionSpace);
     }
@@ -67,5 +65,10 @@ public class PromotionSpaceServiceImpl implements PromotionSpaceService {
     @Override
     public void deleteSpace(Integer id) {
         promotionSpaceDao.deleteById(id);
+    }
+
+    @Override
+    public PromotionSpaceDTO getById(Integer id) {
+       return promotionSpaceMapper.toDto(promotionSpaceDao.selectById(id));
     }
 }

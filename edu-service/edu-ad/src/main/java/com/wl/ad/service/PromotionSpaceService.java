@@ -36,4 +36,6 @@ public interface PromotionSpaceService {
      * @param id /
      */
     void deleteSpace(Integer id);
+
+    PromotionSpaceDTO getById(Integer id);
 }
