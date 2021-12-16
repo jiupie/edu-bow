@@ -49,11 +49,16 @@ public class PromotionAdServiceImpl implements PromotionAdService {
     @Override
     public PromotionAdDTO saveOrUpdateAd(PromotionAdDTO promotionAdDTO) {
         PromotionAd promotionAd = promotionAdMapper.toEntity(promotionAdDTO);
-        if(Objects.isNull(promotionAd.getId())){
+        if (Objects.isNull(promotionAdDTO.getId())) {
             promotionAdDao.insert(promotionAd);
-        }else {
+        } else {
             promotionAdDao.updateById(promotionAd);
         }
         return promotionAdMapper.toDto(promotionAd);
+    }
+
+    @Override
+    public void deleteAdById(Integer id) {
+        promotionAdDao.deleteById(id);
     }
 }

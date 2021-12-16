@@ -40,4 +40,10 @@ public interface PromotionAdService {
      * @return /
      */
     PromotionAdDTO saveOrUpdateAd(PromotionAdDTO promotionAdDTO);
+
+    /**
+     * 通过id删除广告信息
+     * @param id /
+     */
+    void deleteAdById(Integer id);
 }

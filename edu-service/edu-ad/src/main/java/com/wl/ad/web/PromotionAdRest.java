@@ -54,6 +54,14 @@ public class PromotionAdRest {
         return ResponseDTO.success();
     }
 
+
+    @ApiOperation("删除广告")
+    @DeleteMapping("/{id}")
+    public ResponseDTO deleteAd(@PathVariable(name = "id") @NotNull Integer id) {
+        promotionAdService.deleteAdById(id);
+        return ResponseDTO.success();
+    }
+
     @ApiOperation("通过id获取广告位")
     @GetMapping("/space/getSpaceById")
     public ResponseDTO getSpaceById(Integer id) {
@@ -61,11 +69,10 @@ public class PromotionAdRest {
     }
 
 
-
     @ApiOperation("获取所有广告")
     @GetMapping("/getAllAds")
-    public ResponseDTO getAllAds(){
-      return   ResponseDTO.success(promotionAdService.getAllAds());
+    public ResponseDTO getAllAds() {
+        return ResponseDTO.success(promotionAdService.getAllAds());
     }
 
     @ApiOperation("通过id获取广告")
