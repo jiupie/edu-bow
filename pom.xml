@@ -14,6 +14,7 @@
         <module>edu-test</module>
         <module>edu-doc</module>
         <module>edu-gateway</module>
+        <module>edu-uaa</module>
     </modules>
 
     <properties>
