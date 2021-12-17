@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.wl</groupId>
+    <version>1.0.0</version>
+
+    <artifactId>edu-core-dependencies</artifactId>
+
+    <properties>
+        <spring.boot.admin.version>2.5.4</spring.boot.admin.version>
+        <mybatis.plus.version>3.4.3.4</mybatis.plus.version>
+        <springfox.boot.stater>3.0.0</springfox.boot.stater>
+        <knife4j.ui.version>3.0.3</knife4j.ui.version>
+
+        <spring.boot.version>2.4.5</spring.boot.version>
+        <spring.plugin.version>2.0.0.RELEASE</spring.plugin.version>
+        <alibaba.cloud.version>2021.1</alibaba.cloud.version>
+        <spring.cloud.version>2020.0.4</spring.cloud.version>
+
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+
+        <edu.core.version>1.0.0</edu.core.version>
+        <mapstruct.version>1.4.2.Final</mapstruct.version>
+    </properties>
+    <dependencyManagement>
+        <dependencies>
+            <!--            springboot依赖版本管理-->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring.boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!--            spring插件-->
+            <dependency>
+                <groupId>org.springframework.plugin</groupId>
+                <artifactId>spring-plugin-core</artifactId>
+                <version>${spring.plugin.version}</version>
+            </dependency>
+
+            <!--cloud-->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring.cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <type>pom</type>
+                <scope>import</scope>
+                <version>${alibaba.cloud.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-annotation</artifactId>
+                <version>${mybatis.plus.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${mybatis.plus.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>de.codecentric</groupId>
+                <artifactId>spring-boot-admin-starter-client</artifactId>
+                <version>${spring.boot.admin.version}</version>
+            </dependency>
+
+            <!--mapstruct-->
+            <dependency>
+                <groupId>org.mapstruct</groupId>
+                <artifactId>mapstruct</artifactId>
+                <version>${mapstruct.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mapstruct</groupId>
+                <artifactId>mapstruct-processor</artifactId>
+                <version>${mapstruct.version}</version>
+            </dependency>
+
+            <!--            swagger-->
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-boot-starter</artifactId>
+                <version>${springfox.boot.stater}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.github.xiaoymin</groupId>
+                <artifactId>knife4j-spring-ui</artifactId>
+                <version>${knife4j.ui.version}</version>
+            </dependency>
+
+
+            <!--my dependence-->
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>edu-core-web</artifactId>
+                <version>${edu.core.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>edu-core-cloud</artifactId>
+                <version>${edu.core.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>edu-core-mybatis</artifactId>
+                <version>${edu.core.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>edu-core-common</artifactId>
+                <version>${edu.core.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+</project>
