@@ -1,0 +1,19 @@
+spring:
+  profiles:
+    active: @spring.active@
+  cloud:
+    nacos:
+      server-addr: @config.server-addr@
+      discovery:
+        namespace: @config.namespace@
+        group: @config.group@
+      config:
+        namespace: @config.namespace@
+        group: @config.group@
+  main:
+    allow-bean-definition-overriding: true
+
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    default-property-inclusion: non_null
+    time-zone: GMT+8

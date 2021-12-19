@@ -24,6 +24,10 @@
             <artifactId>mysql-connector-java</artifactId>
             <scope>runtime</scope>
         </dependency>
+        <dependency>
+            <groupId>com.wl</groupId>
+            <artifactId>edu-core-common</artifactId>
+        </dependency>
     </dependencies>
 
 </project>
