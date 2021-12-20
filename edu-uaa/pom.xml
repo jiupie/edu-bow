@@ -28,6 +28,10 @@
             <groupId>com.wl</groupId>
             <artifactId>edu-core-web</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.wl</groupId>
+            <artifactId>edu-core-cloud</artifactId>
+        </dependency>
 
         <dependency>
             <groupId>com.xkcoding.justauth</groupId>

@@ -35,6 +35,6 @@ public class UserProvider implements IUserProvider{
     @GetMapping(AppConstant.PROVIDER+"user/mobile")
     @Override
     public ResponseDTO<User> getUserByMobile(String mobile) {
-        return null;
+        return ResponseDTO.success(userService.getUserByMobile(mobile));
     }
 }

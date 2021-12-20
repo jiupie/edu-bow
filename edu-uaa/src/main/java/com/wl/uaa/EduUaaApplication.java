@@ -1,9 +1,8 @@
-package com.wl;
+package com.wl.uaa;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
-import springfox.documentation.oas.annotations.EnableOpenApi;
 
 /**
  * @author 南顾北衫
@@ -11,9 +10,10 @@ import springfox.documentation.oas.annotations.EnableOpenApi;
  */
 @SpringBootApplication
 @EnableDiscoveryClient
-@EnableOpenApi
-public class EduAdApplication {
-    public static void main(String[] args) {
-        SpringApplication.run(EduAdApplication.class, args);
-    }
+public class EduUaaApplication {
+
+        public static void main(String[] args) {
+            SpringApplication.run(EduUaaApplication.class, args);
+        }
+
 }
