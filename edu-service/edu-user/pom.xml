@@ -11,9 +11,14 @@
 
     <artifactId>edu-user</artifactId>
 
-    <properties>
-        <maven.compiler.source>17</maven.compiler.source>
-        <maven.compiler.target>17</maven.compiler.target>
-    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>com.wl</groupId>
+            <artifactId>edu-user-api</artifactId>
+            <version>${edu.project.version}</version>
+        </dependency>
+
+    </dependencies>
+
 
 </project>

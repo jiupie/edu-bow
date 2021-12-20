@@ -134,6 +134,11 @@
                 <artifactId>edu-core-common</artifactId>
                 <version>${edu.core.version}</version>
             </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>edu-core-feign</artifactId>
+                <version>${edu.core.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 

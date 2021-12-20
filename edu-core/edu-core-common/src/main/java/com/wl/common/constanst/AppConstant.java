@@ -6,4 +6,7 @@ package com.wl.common.constanst;
  */
 public interface AppConstant {
     String APPLICATION_EDU_AD="edu-ad";
+    String APPLICATION_EDU_USER="edu-user";
+    String PROVIDER = "/provider";
+
 }

@@ -11,9 +11,12 @@
 
     <artifactId>edu-user-api</artifactId>
 
-    <properties>
-        <maven.compiler.source>17</maven.compiler.source>
-        <maven.compiler.target>17</maven.compiler.target>
-    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>com.wl</groupId>
+            <artifactId>edu-core-feign</artifactId>
+        </dependency>
+    </dependencies>
+
 
 </project>

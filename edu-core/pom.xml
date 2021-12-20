@@ -13,6 +13,8 @@
         <module>edu-core-cloud</module>
         <module>edu-core-web</module>
         <module>edu-core-mybatis</module>
+        <module>edu-core-feign</module>
+
     </modules>
 
     <properties>
