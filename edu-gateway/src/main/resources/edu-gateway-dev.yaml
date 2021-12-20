@@ -6,5 +6,3 @@ spring:
           uri: lb://edu-ad
           predicates:
             - Path=/api/ad/**
-server:
-  port: 9000

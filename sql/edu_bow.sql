@@ -1,5 +1,5 @@
 
-create database edu_ad;
+CREATE DATABASE `edu_bow` CHARACTER SET 'utf8mb4' COLLATE 'utf8mb4_general_ci';
 
 -- ----------------------------
 -- Table structure for promotion_space

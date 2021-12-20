@@ -10,6 +10,8 @@ spring:
       config:
         namespace: @config.namespace@
         group: @config.group@
+        prefix: edu
+        file-extension: yaml
   main:
     allow-bean-definition-overriding: true
 

@@ -5,6 +5,6 @@ spring:
         - id: edu-ad
           uri: lb://edu-ad
           predicates:
-            - Path=/edu-ad/**
-          filters:
-            - StripPrefix=1
+            - Path=/api/ad/**
+server:
+  port: 9000

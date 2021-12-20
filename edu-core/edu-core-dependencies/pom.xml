@@ -25,6 +25,9 @@
 
         <edu.core.version>1.0.0</edu.core.version>
         <mapstruct.version>1.4.2.Final</mapstruct.version>
+
+        <justauth.springboot.version>1.3.3</justauth.springboot.version>
+
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -87,6 +90,13 @@
                 <groupId>org.mapstruct</groupId>
                 <artifactId>mapstruct-processor</artifactId>
                 <version>${mapstruct.version}</version>
+            </dependency>
+
+            <!--            justauth-->
+            <dependency>
+                <groupId>com.xkcoding.justauth</groupId>
+                <artifactId>justauth-spring-boot-starter</artifactId>
+                <version>${justauth.springboot.version}</version>
             </dependency>
 
             <!--            swagger-->
