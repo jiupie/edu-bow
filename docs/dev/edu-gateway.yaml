@@ -6,5 +6,9 @@ spring:
           uri: lb://edu-ad
           predicates:
             - Path=/api/ad/**
+        - id: edu-user
+          uri: lb://edu-user
+          predicates:
+            - Path=/api/user/**
 server:
   port: 9000

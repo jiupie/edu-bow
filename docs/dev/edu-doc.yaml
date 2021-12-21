@@ -8,5 +8,11 @@ spring:
             - Path=/edu-ad/**
           filters:
             - StripPrefix=1
+        - id: edu-user
+          uri: lb://edu-user
+          predicates:
+            - Path=/edu-user/**
+          filters:
+            - StripPrefix=1
 server:
   port: 9001
