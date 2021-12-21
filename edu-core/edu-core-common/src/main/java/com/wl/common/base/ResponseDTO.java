@@ -1,5 +1,6 @@
 package com.wl.common.base;
 
+import com.wl.common.enums.ResultCode;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -42,13 +43,29 @@ public class ResponseDTO<T> implements Serializable {
         return responseDTO;
     }
 
+    public static <T> ResponseDTO<T> response(ResultCode resultCode, T content){
+        ResponseDTO responseDTO = new ResponseDTO();
+        responseDTO.setState(resultCode.getCode());
+        responseDTO.setContent(content);
+        responseDTO.setMessage(resultCode.getMessage());
+        return responseDTO;
+    }
+
+    public static <T> ResponseDTO<T> response(ResultCode resultCode,String message, T content){
+        ResponseDTO responseDTO = new ResponseDTO();
+        responseDTO.setState(resultCode.getCode());
+        responseDTO.setContent(content);
+        responseDTO.setMessage(message);
+        return responseDTO;
+    }
+
 
     public static <T> ResponseDTO<T> success(){
-        return ResponseDTO.response(1,"success",null);
+        return ResponseDTO.response(ResultCode.SUCCESS,null);
     }
 
     public static <T> ResponseDTO<T> success(T content){
-        return ResponseDTO.response(1,"success",content);
+        return ResponseDTO.response(ResultCode.SUCCESS,content);
     }
 
     public static <T> ResponseDTO<T> ofError(int state,String message,T content){
@@ -60,6 +77,6 @@ public class ResponseDTO<T> implements Serializable {
     }
 
     public static <T> ResponseDTO<T> ofError(String message){
-        return ResponseDTO.response(1002,message,null);
+        return ResponseDTO.response(ResultCode.ERROR,message,null);
     }
 }

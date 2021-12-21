@@ -16,6 +16,7 @@
     <modules>
         <module>edu-ad</module>
         <module>edu-user</module>
+        <module>edu-resource</module>
 
     </modules>
 

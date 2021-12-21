@@ -1,0 +1,5 @@
+oss:
+  enable: true
+  endpoint: http://127.0.0.1:19000
+  accessKey: KNMOSWHBF78UAQQTZW0B
+  secretKey: pQyd6sFZE14u+eeqmB6odUlKADBnKzpZYLnwiEDh

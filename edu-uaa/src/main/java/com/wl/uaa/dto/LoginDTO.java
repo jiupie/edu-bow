@@ -10,13 +10,14 @@ import lombok.Data;
 @Data
 public class LoginDTO {
     /**
-     * 手机号码
+     * 手机号码 邮箱
      */
     private String login;
+
     /**
-     * 登录类型：sms password
+     * 登录类型：sms password email
      */
-    private String logType;
+    private String loginType;
     /**
      * 密码
      */
