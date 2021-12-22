@@ -1,17 +1,21 @@
 package com.wl.ad.service.impl;
 
-import com.alicp.jetcache.anno.Cached;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.wl.ad.dao.PromotionAdDao;
 import com.wl.ad.domain.PromotionAd;
 import com.wl.ad.dto.PromotionAdDTO;
 import com.wl.ad.service.PromotionAdService;
 import com.wl.ad.service.mapstruct.PromotionAdMapper;
+import com.wl.core.mail.service.MailTemplate;
+import freemarker.template.Configuration;
+import freemarker.template.TemplateException;
 import lombok.RequiredArgsConstructor;
-import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
+import org.springframework.ui.freemarker.FreeMarkerTemplateUtils;
 
+import java.io.IOException;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Objects;
 
@@ -43,11 +47,9 @@ public class PromotionAdServiceImpl implements PromotionAdService {
         return promotionAdMapper.toDto(promotionAdDao.selectList(null));
     }
 
-    @Cached(name = "adlist-",key = "#id", expire = 1200)
+    //    @Cached(name = "adlist-",key = "#id", expire = 1200)
     @Override
-    public PromotionAdDTO getById(Integer id) {
-        String property = System.getProperty("jetcache.areaInCacheName");
-        System.out.println(property);
+    public PromotionAdDTO getById(Integer id)  {
         return promotionAdMapper.toDto(promotionAdDao.selectById(id));
     }
 

@@ -2,6 +2,7 @@ package com.wl.ad.service;
 
 import com.wl.ad.dto.PromotionAdDTO;
 
+import java.io.IOException;
 import java.util.List;
 
 /**

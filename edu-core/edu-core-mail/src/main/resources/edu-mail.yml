@@ -1,0 +1,16 @@
+#邮件配置样例
+spring:
+  mail:
+    host: smtp.163.com
+    username: 17674641491@163.com
+    password: FEUWJOAAPBPHTYDR
+    port: 25
+    test-connection: true
+#    properties:
+#      smtp:
+#        auth: true
+#        timeout: 2500
+#      mail:
+#        smtp:
+#          ssl:
+#            enable: true

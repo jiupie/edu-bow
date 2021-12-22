@@ -17,6 +17,7 @@
         <module>edu-core-redis</module>
         <module>edu-core-oss</module>
         <module>edu-core-cache</module>
+        <module>edu-core-mail</module>
 
     </modules>
 

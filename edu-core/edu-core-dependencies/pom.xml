@@ -190,6 +190,11 @@
                 <artifactId>edu-core-cache</artifactId>
                 <version>${edu.core.version}</version>
             </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>edu-core-mail</artifactId>
+                <version>${edu.core.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
