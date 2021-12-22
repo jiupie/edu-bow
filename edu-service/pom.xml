@@ -17,6 +17,7 @@
         <module>edu-ad</module>
         <module>edu-user</module>
         <module>edu-resource</module>
+        <module>edu-springboot-admin-server</module>
 
     </modules>
 

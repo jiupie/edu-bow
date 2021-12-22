@@ -6,16 +6,10 @@ import com.wl.ad.domain.PromotionAd;
 import com.wl.ad.dto.PromotionAdDTO;
 import com.wl.ad.service.PromotionAdService;
 import com.wl.ad.service.mapstruct.PromotionAdMapper;
-import com.wl.core.mail.service.MailTemplate;
-import freemarker.template.Configuration;
-import freemarker.template.TemplateException;
 import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Service;
-import org.springframework.ui.freemarker.FreeMarkerTemplateUtils;
+import org.springframework.stereotype.  Service;
 
-import java.io.IOException;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Objects;
 

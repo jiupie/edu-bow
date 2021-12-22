@@ -79,9 +79,16 @@
                 <version>${mybatis.plus.version}</version>
             </dependency>
 
+            <!--            springboot admin client-->
             <dependency>
                 <groupId>de.codecentric</groupId>
                 <artifactId>spring-boot-admin-starter-client</artifactId>
+                <version>${spring.boot.admin.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>de.codecentric</groupId>
+                <artifactId>spring-boot-admin-starter-server</artifactId>
                 <version>${spring.boot.admin.version}</version>
             </dependency>
 
@@ -133,6 +140,7 @@
                 <artifactId>guava</artifactId>
                 <version>${guava.version}</version>
             </dependency>
+
 
             <!--oss s3标准-->
             <dependency>
@@ -195,6 +203,12 @@
                 <artifactId>edu-core-mail</artifactId>
                 <version>${edu.core.version}</version>
             </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>edu-core-prometheus</artifactId>
+                <version>${edu.core.version}</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 

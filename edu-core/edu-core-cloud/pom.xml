@@ -47,6 +47,12 @@
             <groupId>de.codecentric</groupId>
             <artifactId>spring-boot-admin-starter-client</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>com.wl</groupId>
+            <artifactId>edu-core-prometheus</artifactId>
+        </dependency>
+
     </dependencies>
 
 </project>
