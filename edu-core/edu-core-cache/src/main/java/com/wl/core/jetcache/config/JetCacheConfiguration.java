@@ -16,7 +16,10 @@ import com.wl.common.factory.YamlPropertySourceFactory;
 import com.wl.core.jetcache.jackson.JacksonKeyConvertor;
 import com.wl.core.jetcache.jackson.JacksonValueDecoder;
 import com.wl.core.jetcache.jackson.JacksonValueEncoder;
+import com.wl.core.jetcache.props.JetcacheProperties;
 import org.springframework.beans.factory.InitializingBean;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -33,9 +36,12 @@ import java.util.Map;
 @Configuration
 @EnableCreateCacheAnnotation
 @EnableMethodCache(basePackages = "com.wl")
+@EnableConfigurationProperties(JetcacheProperties.class)
 @PropertySource(factory = YamlPropertySourceFactory.class,value = "classpath:edu-jetcache.yaml")
 public class JetCacheConfiguration implements InitializingBean {
     private ObjectMapper cacheMapper;
+    @Autowired
+    private JetcacheProperties jetcacheProperties;
 
     @Bean("jacksonKeyConvertor")
     public JacksonKeyConvertor jacksonKeyConvertor() {
@@ -98,9 +104,11 @@ public class JetCacheConfiguration implements InitializingBean {
         GlobalCacheConfig globalCacheConfig = new GlobalCacheConfig();
         globalCacheConfig.setLocalCacheBuilders(localBuilders);
         globalCacheConfig.setRemoteCacheBuilders(remoteBuilders);
-        globalCacheConfig.setStatIntervalMinutes(15);
         globalCacheConfig.setAreaInCacheName(false);
-        globalCacheConfig.setStatIntervalMinutes(1);
+
+        if(jetcacheProperties.getEnableLog()){
+            globalCacheConfig.setStatIntervalMinutes(jetcacheProperties.getMinutes());
+        }
         return globalCacheConfig;
     }
 
