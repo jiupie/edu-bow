@@ -1,0 +1,4 @@
+spring:
+  redis:
+    host: ${edu.redis.jetcache.host:127.0.0.1}
+    port: ${edu.redis.jetcache.port:6379}

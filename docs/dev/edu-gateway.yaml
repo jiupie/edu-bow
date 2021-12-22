@@ -2,13 +2,12 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: edu-ad
-          uri: lb://edu-ad
+        - id: sentinel-demo-router
+          uri: lb://sentinel-client
           predicates:
-            - Path=/api/ad/**
-        - id: edu-user
-          uri: lb://edu-user
-          predicates:
-            - Path=/api/user/**
-server:
-  port: 9000
+            - Path=/hello/**
+    sentinel:
+      enabled: true
+      transport:
+        dashboard: localhost:8080
+        port: 8719

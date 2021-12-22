@@ -24,7 +24,10 @@
             <artifactId>edu-ad-api</artifactId>
             <version>${edu.project.version}</version>
          </dependency>
-
+        <dependency>
+            <groupId>com.wl</groupId>
+            <artifactId>edu-core-cache</artifactId>
+        </dependency>
 
     </dependencies>
 </project>

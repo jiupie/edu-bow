@@ -1,5 +1,6 @@
 package com.wl.ad.service.impl;
 
+import com.alicp.jetcache.anno.Cached;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.wl.ad.dao.PromotionAdDao;
 import com.wl.ad.domain.PromotionAd;
@@ -7,6 +8,7 @@ import com.wl.ad.dto.PromotionAdDTO;
 import com.wl.ad.service.PromotionAdService;
 import com.wl.ad.service.mapstruct.PromotionAdMapper;
 import lombok.RequiredArgsConstructor;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
@@ -41,8 +43,11 @@ public class PromotionAdServiceImpl implements PromotionAdService {
         return promotionAdMapper.toDto(promotionAdDao.selectList(null));
     }
 
+    @Cached(name = "adlist-",key = "#id", expire = 1200)
     @Override
     public PromotionAdDTO getById(Integer id) {
+        String property = System.getProperty("jetcache.areaInCacheName");
+        System.out.println(property);
         return promotionAdMapper.toDto(promotionAdDao.selectById(id));
     }
 

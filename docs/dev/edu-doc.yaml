@@ -14,5 +14,11 @@ spring:
             - Path=/edu-user/**
           filters:
             - StripPrefix=1
+        - id: edu-resource
+          uri: lb://edu-resource
+          predicates:
+            - Path=/edu-resource/**
+          filters:
+            - StripPrefix=1
 server:
   port: 9001

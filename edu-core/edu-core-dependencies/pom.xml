@@ -32,7 +32,7 @@
         <guava.version>23.0</guava.version>
 
         <aws-java-sdk-s3.version>1.12.86</aws-java-sdk-s3.version>
-
+        <jetcache.version>2.6.0</jetcache.version>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -134,11 +134,18 @@
                 <version>${guava.version}</version>
             </dependency>
 
-
+            <!--oss s3标准-->
             <dependency>
                 <groupId>com.amazonaws</groupId>
                 <artifactId>aws-java-sdk-s3</artifactId>
                 <version>${aws-java-sdk-s3.version}</version>
+            </dependency>
+
+            <!--jetchache-->
+            <dependency>
+                <groupId>com.alicp.jetcache</groupId>
+                <artifactId>jetcache-starter-redis-springdata</artifactId>
+                <version>${jetcache.version}</version>
             </dependency>
 
             <!--my dependence-->
@@ -175,6 +182,12 @@
             <dependency>
                 <groupId>${project.groupId}</groupId>
                 <artifactId>edu-core-oss</artifactId>
+                <version>${edu.core.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>edu-core-cache</artifactId>
                 <version>${edu.core.version}</version>
             </dependency>
         </dependencies>
