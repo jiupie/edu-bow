@@ -4,4 +4,4 @@ spring:
     port: 6379
 jetcache:
   enable-log: false
-debug: true
+#debug: true

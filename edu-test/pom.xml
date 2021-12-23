@@ -12,5 +12,31 @@
     <artifactId>edu-test</artifactId>
 
 
+    <dependencies>
+        <dependency>
+            <groupId>com.wl</groupId>
+            <artifactId>edu-core-cloud</artifactId>
+        </dependency>
 
+        <dependency>
+            <groupId>com.wl</groupId>
+            <artifactId>edu-core-encrypt</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.wl</groupId>
+            <artifactId>edu-core-feign</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.wl</groupId>
+            <artifactId>edu-core-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.wl</groupId>
+            <artifactId>edu-user-api</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
 </project>

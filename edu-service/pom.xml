@@ -43,6 +43,10 @@
             <artifactId>mapstruct-processor</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>com.wl</groupId>
+            <artifactId>edu-core-mybatis</artifactId>
+        </dependency>
 
     </dependencies>
 

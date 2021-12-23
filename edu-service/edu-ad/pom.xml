@@ -13,11 +13,6 @@
     <version>${edu.project.version}</version>
     <artifactId>edu-ad</artifactId>
 
-    <properties>
-        <maven.compiler.source>11</maven.compiler.source>
-        <maven.compiler.target>11</maven.compiler.target>
-    </properties>
-
     <dependencies>
         <dependency>
             <groupId>com.wl</groupId>
@@ -27,6 +22,11 @@
         <dependency>
             <groupId>com.wl</groupId>
             <artifactId>edu-core-cache</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.wl</groupId>
+            <artifactId>edu-core-encrypt</artifactId>
         </dependency>
     </dependencies>
 </project>

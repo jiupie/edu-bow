@@ -5,6 +5,7 @@ import com.wl.ad.dto.PromotionSpaceDTO;
 import com.wl.ad.service.PromotionAdService;
 import com.wl.ad.service.PromotionSpaceService;
 import com.wl.common.base.ResponseDTO;
+import com.wl.core.encrypt.annotation.SeparateEncrypt;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
@@ -25,8 +26,9 @@ public class PromotionAdRest {
     private final PromotionSpaceService promotionSpaceService;
     private final PromotionAdService promotionAdService;
 
+    @SeparateEncrypt
     @ApiOperation("获取所有的广告位")
-    @GetMapping("/space/getAllSpace")
+    @PostMapping("/space/getAllSpace")
     public ResponseDTO getAllSpace() {
         return ResponseDTO.success(promotionSpaceService.list());
     }

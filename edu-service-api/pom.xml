@@ -25,6 +25,7 @@
         <dependency>
             <groupId>com.wl</groupId>
             <artifactId>edu-core-mybatis</artifactId>
+            <scope>provided</scope>
         </dependency>
 
     </dependencies>

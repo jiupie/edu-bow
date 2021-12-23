@@ -1,9 +1,10 @@
-package com.wl.ad;
+package com.wl;
 
 import com.wl.core.encrypt.annotation.EnableEncrypt;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 
 /**
  * @author 南顾北衫
@@ -12,8 +13,9 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 @SpringBootApplication
 @EnableDiscoveryClient
 @EnableEncrypt
-public class EduAdApplication {
+@EnableFeignClients
+public class EduTestApplication {
     public static void main(String[] args) {
-        SpringApplication.run(EduAdApplication.class, args);
+        SpringApplication.run(EduTestApplication.class, args);
     }
 }

@@ -208,6 +208,12 @@
                 <artifactId>edu-core-prometheus</artifactId>
                 <version>${edu.core.version}</version>
             </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>edu-core-encrypt</artifactId>
+                <version>${edu.core.version}</version>
+            </dependency>
+
 
         </dependencies>
     </dependencyManagement>

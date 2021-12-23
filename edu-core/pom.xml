@@ -19,6 +19,7 @@
         <module>edu-core-cache</module>
         <module>edu-core-mail</module>
         <module>edu-core-prometheus</module>
+        <module>edu-core-encrypt</module>
 
     </modules>
 
