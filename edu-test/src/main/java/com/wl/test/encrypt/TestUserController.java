@@ -39,4 +39,9 @@ public class TestUserController {
         return iUserProvider.getUserById(user.getId());
     }
 
+    @GetMapping("/sign/getUserById")
+    public ResponseDTO getMappingSignUserById(Long id) {
+        return iUserProvider.getUserById(id);
+    }
+
 }

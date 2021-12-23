@@ -28,11 +28,14 @@
             <artifactId>edu-core-feign</artifactId>
         </dependency>
 
+<!--        <dependency>-->
+<!--            <groupId>com.wl</groupId>-->
+<!--            <artifactId>edu-core-web</artifactId>-->
+<!--        </dependency>-->
         <dependency>
-            <groupId>com.wl</groupId>
-            <artifactId>edu-core-web</artifactId>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-
         <dependency>
             <groupId>com.wl</groupId>
             <artifactId>edu-user-api</artifactId>

@@ -15,7 +15,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * 签名实现处理类
  *
- * @author gaoyang
+ * @author 南顾北衫
  */
 @Slf4j
 public class SignEncryptHandlerImpl implements SignEncryptHandler {
@@ -41,7 +41,9 @@ public class SignEncryptHandlerImpl implements SignEncryptHandler {
 		}
 		long now = System.currentTimeMillis();
 		long timestampLong = Long.parseLong(timestamp.toString());
-		if (!((now < timestampLong + timeout) && now >= timestampLong)) {
+		//当前时间小于传来时间+超时时间    && 当前时间大于传来的时间
+		//时间戳只有在 当前时间   到  当前时间+超时时间范围内才能访问
+		if (!((now < timestampLong + timeUnit.toMillis(timeout)) && now >= timestampLong)) {
 			throw new EncryptException("非法请求，请求超时");
 		}
 	}
