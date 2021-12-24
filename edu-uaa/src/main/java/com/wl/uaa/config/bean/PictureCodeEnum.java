@@ -6,7 +6,7 @@ package com.wl.uaa.config.bean;
  *
  * @author liaojinlong
  */
-public enum LoginCodeEnum {
+public enum PictureCodeEnum {
     /**
      * 算数
      */

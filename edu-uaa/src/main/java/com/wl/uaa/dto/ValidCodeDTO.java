@@ -22,4 +22,6 @@ public class ValidCodeDTO {
      * 目标：sms通过手机号码 email通过邮件
      */
     private String target;
+
+    private String code;
 }

@@ -23,6 +23,7 @@ public class UserProvider implements IUserProvider{
     @Override
     @GetMapping(AppConstant.PROVIDER + "/user/id")
     public ResponseDTO<User> getUserById(Long id) {
+        int i=1/0;
         return ResponseDTO.success(userService.getUserById(id));
     }
 

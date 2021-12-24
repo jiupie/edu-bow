@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
  * @author 南顾北衫
  * @email 17674641491@163.com
  */
-@FeignClient(value = AppConstant.APPLICATION_EDU_USER)
+@FeignClient(value = AppConstant.APPLICATION_EDU_USER,fallback = UserProviderFallback.class)
 public interface IUserProvider {
 
     /**

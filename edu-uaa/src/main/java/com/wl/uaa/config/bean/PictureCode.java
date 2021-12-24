@@ -3,21 +3,18 @@ package com.wl.uaa.config.bean;
 import lombok.Data;
 
 /**
- * 登录验证码配置信息
+ * 图形验证码配置信息
  *
  * @author liaojinlong
  */
 @Data
-public class LoginCode {
+public class PictureCode {
 
     /**
      * 验证码配置
      */
-    private LoginCodeEnum codeType;
-    /**
-     * 验证码有效期 分钟
-     */
-    private Long expiration = 2L;
+    private PictureCodeEnum codeType;
+
     /**
      * 验证码内容长度
      */
@@ -39,7 +36,7 @@ public class LoginCode {
      */
     private int fontSize = 25;
 
-    public LoginCodeEnum getCodeType() {
+    public PictureCodeEnum getCodeType() {
         return codeType;
     }
 }
