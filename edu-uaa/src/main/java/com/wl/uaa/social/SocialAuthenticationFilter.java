@@ -23,7 +23,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * 社交登录验证过滤器
  *
- * @author pangu
+ * @author 南顾北衫
  */
 @Slf4j
 public class SocialAuthenticationFilter extends AbstractAuthenticationProcessingFilter {

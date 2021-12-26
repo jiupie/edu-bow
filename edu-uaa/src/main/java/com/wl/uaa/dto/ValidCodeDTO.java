@@ -23,5 +23,8 @@ public class ValidCodeDTO {
      */
     private String target;
 
+    /**
+     * 验证码
+     */
     private String code;
 }

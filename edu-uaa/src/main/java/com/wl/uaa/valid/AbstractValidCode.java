@@ -43,8 +43,21 @@ public abstract class AbstractValidCode {
     public abstract ValidCode creatValidCode(ValidCodeDTO validCodeDTO);
 
 
+    /**
+     * 简单的验证码生成
+     * @return /
+     */
+    public String generateSimpleCode(){
+        StringBuilder code=new StringBuilder();
+        //生成验证码
+        for (int i = 0; i < 6; i++) {
+            code.append(ThreadLocalRandom.current().nextInt(10));
+        }
+        return code.toString();
+    }
+
     public boolean valid(ValidCodeDTO validCodeDTO) {
-        Map<String, String> map = validBuildKey(validCodeDTO);
+        Map<String, String> map = buildKey(validCodeDTO);
         Object key = redisService.get(map.get("key"));
         if (Objects.isNull(key)) {
             return false;
@@ -78,35 +91,9 @@ public abstract class AbstractValidCode {
         String action = validCodeDTO.getAction();
         String channel = validCodeDTO.getChannel();
         String target = validCodeDTO.getTarget();
-        StringBuilder code = new StringBuilder();
-        for (int i = 0; i < 6; i++) {
-            code.append(ThreadLocalRandom.current().nextInt(10));
-        }
-
+        String code=validCodeDTO.getCode();
         Map<String, String> map = new HashMap<>();
         map.put("key", SecureUtil.md5(securityProperties.getCodeKey() + action + channel + target + code));
-        map.put("code", code.toString());
-        return map;
-    }
-
-    /**
-     * 验证验证码
-     *
-     * @param validCodeDTO
-     * @return
-     */
-    public Map<String, String> validBuildKey(ValidCodeDTO validCodeDTO) {
-        String action = validCodeDTO.getAction();
-        String channel = validCodeDTO.getChannel();
-        String target = validCodeDTO.getTarget();
-        StringBuilder code = new StringBuilder();
-        for (int i = 0; i < 6; i++) {
-            code.append(ThreadLocalRandom.current().nextInt(10));
-        }
-
-        Map<String, String> map = new HashMap<>();
-        map.put("key", SecureUtil.md5(securityProperties.getCodeKey() + action + channel + target + code));
-        map.put("code", code.toString());
         return map;
     }
 

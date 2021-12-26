@@ -14,7 +14,7 @@ import java.util.Objects;
 /**
  * 社交登录验证提供者
  *
- * @author pangu
+ * @author 南顾北衫
  */
 @AllArgsConstructor
 public class SocialAuthenticationProvider implements AuthenticationProvider {

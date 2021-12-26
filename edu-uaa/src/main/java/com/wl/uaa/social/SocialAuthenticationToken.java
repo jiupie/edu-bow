@@ -9,7 +9,7 @@ import java.util.Collection;
 /**
  * 社交验证token生成
  *
- * @author pangu
+ * @author 南顾北衫
  */
 public class SocialAuthenticationToken extends AbstractAuthenticationToken {
 	private static final long serialVersionUID = -3629824093049247125L;

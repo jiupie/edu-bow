@@ -2,16 +2,13 @@ package com.wl.uaa.web;
 
 import com.wl.common.base.ResponseDTO;
 import com.wl.uaa.dto.LoginDTO;
+import com.wl.uaa.dto.ValidCodeDTO;
 import com.wl.uaa.granter.ITokenGranter;
 import com.wl.uaa.granter.TokenGranterBuilder;
 import com.wl.user.domain.User;
 import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiModelProperty;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @author 南顾北衫
@@ -23,13 +20,18 @@ import org.springframework.web.bind.annotation.RestController;
 @Api(tags = "认证模块")
 public class AuthorizationRest {
 
-    @ApiModelProperty
     @PostMapping
-    public ResponseDTO login(@RequestBody LoginDTO loginDTO){
+    public ResponseDTO login(@RequestBody LoginDTO loginDTO) {
         String loginType = loginDTO.getLoginType();
         ITokenGranter tokenGranter = TokenGranterBuilder.getGranter(loginType);
         User user = tokenGranter.grant(loginDTO);
 
+        return null;
+    }
+
+    @GetMapping
+    public ResponseDTO getCode(ValidCodeDTO validCodeDTO) {
+//        validCodeDTO.getChannel();
         return null;
     }
 }

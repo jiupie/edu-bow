@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
 /**
  * 社交登录配置
  *
- * @author pangu
+ * @author 南顾北衫
  */
 @Slf4j
 @Component

@@ -29,14 +29,10 @@ public class EmailValidCode extends AbstractValidCode {
 
     @Override
     public ValidCode creatValidCode(ValidCodeDTO validCodeDTO) {
-        StringBuilder code=new StringBuilder();
-        //生成验证码
-        for (int i = 0; i < 6; i++) {
-            code.append(ThreadLocalRandom.current().nextInt(10));
-        }
-        validCodeDTO.setCode(code.toString());
+        String code=generateSimpleCode();
+        validCodeDTO.setCode(code);
         Map<String, String> map = new HashMap<>();
-        map.put("code",code.toString());
+        map.put("code",code);
         try {
             //发送邮件
             javaMailTemplate.sendHtmlMail(validCodeDTO.getTarget(), "验证码",TemplateUtil.createEngine().getTemplate("/vaildCode.ftl").render(map));

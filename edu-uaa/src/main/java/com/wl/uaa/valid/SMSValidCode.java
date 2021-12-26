@@ -10,6 +10,7 @@ import org.aspectj.apache.bcel.classfile.Code;
 
 import javax.validation.Valid;
 import java.util.Map;
+import java.util.concurrent.ThreadLocalRandom;
 
 /**
  * 手机验证码
@@ -25,9 +26,11 @@ public class SMSValidCode extends AbstractValidCode {
 
     @Override
     public ValidCode creatValidCode(ValidCodeDTO validCodeDTO) {
-        ValidCode validCode = new ValidCode();
+        String code = generateSimpleCode();
+        validCodeDTO.setCode(code);
         Map<String, String> map = buildKey(validCodeDTO);
 
+        ValidCode validCode = new ValidCode();
         validCode.setKey(map.get("key"));
         log.info("生成短信验证码：{}", map.get("code"));
         return validCode;

@@ -17,11 +17,15 @@ public class ValidBuilder {
     private final SecurityProperties securityProperties;
     private final RedisService redisService;
 
+    /**
+     * 登录时创建验证码实现类
+     * @param loginType 登录类型
+     * @return /
+     */
     public AbstractValidCode createLoginValid(LoginType loginType){
         AbstractValidCode validCode=null;
         switch (loginType){
             case PASSWORD:
-                break;
             case EMAIL:
                 break;
             case SMS:
@@ -29,6 +33,8 @@ public class ValidBuilder {
                 break;
             case USERNAME:
                 validCode=new CaptchaValidCode(securityProperties,redisService);
+                break;
+            default:
                 break;
         }
         return validCode;
