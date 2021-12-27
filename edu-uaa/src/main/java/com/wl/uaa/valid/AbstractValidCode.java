@@ -27,11 +27,12 @@ public abstract class AbstractValidCode {
         this.redisService = redisService;
     }
 
-    public void create(ValidCodeDTO validCodeDTO) {
+    public ValidCode create(ValidCodeDTO validCodeDTO) {
         //创建
         ValidCode validCode = this.creatValidCode(validCodeDTO);
         //保存
         saveValidCode(validCode);
+        return validCode;
     }
 
     /**
@@ -40,7 +41,7 @@ public abstract class AbstractValidCode {
      * @param validCodeDTO /
      * @return /
      */
-    public abstract ValidCode creatValidCode(ValidCodeDTO validCodeDTO);
+    protected abstract ValidCode creatValidCode(ValidCodeDTO validCodeDTO);
 
 
     /**

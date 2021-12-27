@@ -2,6 +2,9 @@ package com.wl.common.base;
 
 import java.io.Serializable;
 
+/**
+ * @author dile
+ */
 public interface IResultCode extends Serializable {
 
 	/**

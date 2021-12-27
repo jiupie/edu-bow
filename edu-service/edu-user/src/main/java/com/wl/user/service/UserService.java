@@ -24,6 +24,13 @@ public interface UserService {
     User getUserByUsername(String userName);
 
     /**
+     * 通过email获取用户
+     * @param email 邮件
+     * @return /
+     */
+    User getUserByEmail(String email);
+
+    /**
      * 通过mobile获取用户
      * @param mobile 手机号码
      * @return /

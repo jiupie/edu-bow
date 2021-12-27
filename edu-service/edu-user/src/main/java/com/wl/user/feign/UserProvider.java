@@ -38,4 +38,10 @@ public class UserProvider implements IUserProvider{
     public ResponseDTO<User> getUserByMobile(String mobile) {
         return ResponseDTO.success(userService.getUserByMobile(mobile));
     }
+
+    @GetMapping(AppConstant.PROVIDER + "user/email")
+    @Override
+    public ResponseDTO<User> getUserByEmail(String email) {
+        return ResponseDTO.success(userService.getUserByEmail(email));
+    }
 }

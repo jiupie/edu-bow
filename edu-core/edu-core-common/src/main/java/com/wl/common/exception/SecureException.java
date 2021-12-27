@@ -4,6 +4,9 @@ import com.wl.common.base.IResultCode;
 import com.wl.common.enums.ResultCode;
 import lombok.Getter;
 
+/**
+ * @author dile
+ */
 public class SecureException extends RuntimeException {
 	private static final long serialVersionUID = 2359767895161832954L;
 

@@ -9,6 +9,7 @@
             <result property="name" column="name" jdbcType="VARCHAR"/>
             <result property="portrait" column="portrait" jdbcType="VARCHAR"/>
             <result property="phone" column="phone" jdbcType="VARCHAR"/>
+            <result property="email" column="phone" jdbcType="VARCHAR"/>
             <result property="password" column="password" jdbcType="VARCHAR"/>
             <result property="regIp" column="reg_ip" jdbcType="VARCHAR"/>
             <result property="accountNonExpired" column="account_non_expired" jdbcType="BIT"/>
@@ -21,7 +22,7 @@
     </resultMap>
 
     <sql id="Base_Column_List">
-        id,name,portrait,
+        id,name,portrait,email,
         phone,password,reg_ip,
         account_non_expired,credentials_non_expired,account_non_locked,
         status,is_del,create_time,

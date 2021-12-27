@@ -1,10 +1,12 @@
 package com.wl.user.dto;
 
-import io.swagger.models.auth.In;
 import lombok.Data;
 
 import java.util.Date;
 
+/**
+ * @author dile
+ */
 @Data
 public class UserDTO {
     /**
@@ -16,6 +18,10 @@ public class UserDTO {
      * 用户昵称
      */
     private String name;
+    /**
+     * 邮件
+     */
+    private String email;
 
     /**
      * 用户头像地址

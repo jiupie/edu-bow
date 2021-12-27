@@ -28,6 +28,11 @@ public class User extends BaseEntity {
     private String name;
 
     /**
+     * email
+     */
+    private String email;
+
+    /**
      * 用户头像地址
      */
     private String portrait;

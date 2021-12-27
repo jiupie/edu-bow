@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
  * @author 南顾北衫
  * @email 17674641491@163.com
  */
-@FeignClient(value = AppConstant.APPLICATION_EDU_USER,fallback = UserProviderFallback.class)
+@FeignClient(value = AppConstant.APPLICATION_EDU_USER, fallback = UserProviderFallback.class)
 public interface IUserProvider {
 
     /**
@@ -29,7 +29,7 @@ public interface IUserProvider {
      * @param userName 　用户名
      * @return ResponseDTO
      */
-    @GetMapping(AppConstant.PROVIDER+"user/username")
+    @GetMapping(AppConstant.PROVIDER + "user/username")
     ResponseDTO<User> getUserByUserName(@RequestParam("userName") String userName);
 
     /**
@@ -38,7 +38,15 @@ public interface IUserProvider {
      * @param mobile 　手机号码
      * @return ResponseDTO
      */
-    @GetMapping(AppConstant.PROVIDER+"user/mobile")
+    @GetMapping(AppConstant.PROVIDER + "user/mobile")
     ResponseDTO<User> getUserByMobile(@RequestParam("mobile") String mobile);
 
+    /**
+     * 根据邮件查询用户信息
+     *
+     * @param email 　邮件
+     * @return ResponseDTO
+     */
+    @GetMapping(AppConstant.PROVIDER + "user/email")
+    ResponseDTO<User> getUserByEmail(@RequestParam("email") String email);
 }

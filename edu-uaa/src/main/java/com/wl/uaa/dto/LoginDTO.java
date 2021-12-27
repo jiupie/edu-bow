@@ -10,7 +10,7 @@ import lombok.Data;
 @Data
 public class LoginDTO {
     /**
-     * 手机号码 邮箱
+     * 手机号码 邮箱  username
      */
     private String login;
 

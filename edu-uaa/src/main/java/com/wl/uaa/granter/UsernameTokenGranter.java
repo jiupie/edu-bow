@@ -2,6 +2,7 @@ package com.wl.uaa.granter;
 
 import com.wl.uaa.dto.LoginDTO;
 import com.wl.uaa.enums.LoginType;
+import com.wl.uaa.valid.AbstractValidCode;
 import com.wl.user.domain.User;
 
 /**
@@ -12,7 +13,7 @@ public class UsernameTokenGranter implements ITokenGranter{
     public static final LoginType GRANT_TYPE = LoginType.USERNAME;
 
     @Override
-    public User grant(LoginDTO loginDTO) {
+    public User grant(LoginDTO loginDTO, AbstractValidCode abstractValidCode) {
 
         return null;
     }
