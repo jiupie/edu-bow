@@ -4,7 +4,7 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.wl.user.dao.UserDao;
-import com.wl.user.domain.User;
+import com.wl.user.domain.SysUser;
 import com.wl.user.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -19,33 +19,33 @@ public class UserServiceImpl implements UserService {
     private final UserDao userDao;
 
     @Override
-    public User getUserById(Long id) {
+    public SysUser getUserById(Long id) {
         return userDao.selectById(id);
     }
 
     @Override
-    public User getUserByUsername(String userName) {
-        QueryWrapper<User> queryWrapper = new QueryWrapper<>();
+    public SysUser getUserByUsername(String userName) {
+        QueryWrapper<SysUser> queryWrapper = new QueryWrapper<>();
         queryWrapper.eq("name", userName);
         return userDao.selectOne(queryWrapper);
     }
 
     @Override
-    public User getUserByEmail(String email) {
-        QueryWrapper<User> queryWrapper = new QueryWrapper<>();
+    public SysUser getUserByEmail(String email) {
+        QueryWrapper<SysUser> queryWrapper = new QueryWrapper<>();
         queryWrapper.eq("email", email);
         return userDao.selectOne(queryWrapper);
     }
 
     @Override
-    public User getUserByMobile(String mobile) {
-        QueryWrapper<User> queryWrapper = new QueryWrapper<>();
+    public SysUser getUserByMobile(String mobile) {
+        QueryWrapper<SysUser> queryWrapper = new QueryWrapper<>();
         queryWrapper.eq("phone", mobile);
         return userDao.selectOne(queryWrapper);
     }
 
     @Override
-    public IPage<User> getByPages(Page<User> page) {
+    public IPage<SysUser> getByPages(Page<SysUser> page) {
         return userDao.selectPage(page, null);
     }
 }

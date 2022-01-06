@@ -2,6 +2,7 @@ package com.wl.common.exception;
 
 /**
  * 统一关于错误配置信息 异常
+ * @author dile
  */
 public class BadConfigurationException extends RuntimeException {
 

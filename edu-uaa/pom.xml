@@ -34,6 +34,21 @@
             <groupId>com.wl</groupId>
             <artifactId>edu-core-cloud</artifactId>
         </dependency>
+
+        <!--        jwt-->
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt-impl</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt-jackson</artifactId>
+        </dependency>
+
         <!-- Java图形验证码 -->
         <dependency>
             <groupId>com.github.whvcse</groupId>

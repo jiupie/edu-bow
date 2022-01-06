@@ -2,7 +2,7 @@ package com.wl.user.feign;
 
 import com.wl.common.base.ResponseDTO;
 import com.wl.common.constanst.AppConstant;
-import com.wl.user.domain.User;
+import com.wl.user.domain.SysUser;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -21,7 +21,7 @@ public interface IUserProvider {
      * @return ResponseDTO
      */
     @GetMapping(AppConstant.PROVIDER + "/user/id")
-    ResponseDTO<User> getUserById(@RequestParam("id") Long id);
+    ResponseDTO<SysUser> getUserById(@RequestParam("id") Long id);
 
     /**
      * 根据userName查询用户信息
@@ -30,7 +30,7 @@ public interface IUserProvider {
      * @return ResponseDTO
      */
     @GetMapping(AppConstant.PROVIDER + "user/username")
-    ResponseDTO<User> getUserByUserName(@RequestParam("userName") String userName);
+    ResponseDTO<SysUser> getUserByUserName(@RequestParam("userName") String userName);
 
     /**
      * 根据手机号查询用户信息
@@ -39,7 +39,7 @@ public interface IUserProvider {
      * @return ResponseDTO
      */
     @GetMapping(AppConstant.PROVIDER + "user/mobile")
-    ResponseDTO<User> getUserByMobile(@RequestParam("mobile") String mobile);
+    ResponseDTO<SysUser> getUserByMobile(@RequestParam("mobile") String mobile);
 
     /**
      * 根据邮件查询用户信息
@@ -48,5 +48,5 @@ public interface IUserProvider {
      * @return ResponseDTO
      */
     @GetMapping(AppConstant.PROVIDER + "user/email")
-    ResponseDTO<User> getUserByEmail(@RequestParam("email") String email);
+    ResponseDTO<SysUser> getUserByEmail(@RequestParam("email") String email);
 }

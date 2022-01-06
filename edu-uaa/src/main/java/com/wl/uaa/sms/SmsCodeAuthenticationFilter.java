@@ -45,7 +45,7 @@ public class SmsCodeAuthenticationFilter extends AbstractAuthenticationProcessin
         }
 
         mobile = mobile.trim();
-
+        //封装成token请求，后面请求
         SmsCodeAuthenticationToken authRequest = new SmsCodeAuthenticationToken(mobile);
 
         setDetails(request, authRequest);

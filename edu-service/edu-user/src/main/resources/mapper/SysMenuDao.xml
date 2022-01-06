@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wl.user.dao.SysMenuDao">
+
+    <resultMap id="BaseResultMap" type="com.wl.user.domain.SysMenu">
+            <id property="menuId" column="menu_id" jdbcType="BIGINT"/>
+            <result property="pid" column="pid" jdbcType="BIGINT"/>
+            <result property="subCount" column="sub_count" jdbcType="INTEGER"/>
+            <result property="type" column="type" jdbcType="INTEGER"/>
+            <result property="title" column="title" jdbcType="VARCHAR"/>
+            <result property="name" column="name" jdbcType="VARCHAR"/>
+            <result property="component" column="component" jdbcType="VARCHAR"/>
+            <result property="menuSort" column="menu_sort" jdbcType="INTEGER"/>
+            <result property="icon" column="icon" jdbcType="VARCHAR"/>
+            <result property="path" column="path" jdbcType="VARCHAR"/>
+            <result property="iFrame" column="i_frame" jdbcType="BIT"/>
+            <result property="cache" column="cache" jdbcType="BIT"/>
+            <result property="hidden" column="hidden" jdbcType="BIT"/>
+            <result property="permission" column="permission" jdbcType="VARCHAR"/>
+            <result property="createBy" column="create_by" jdbcType="VARCHAR"/>
+            <result property="updateBy" column="update_by" jdbcType="VARCHAR"/>
+            <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+            <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        menu_id,pid,sub_count,
+        type,title,name,
+        component,menu_sort,icon,
+        path,i_frame,cache,
+        hidden,permission,create_by,
+        update_by,create_time,update_time
+    </sql>
+</mapper>

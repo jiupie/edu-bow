@@ -2,7 +2,7 @@ package com.wl.uaa.granter;
 
 import com.wl.uaa.dto.LoginDTO;
 import com.wl.uaa.valid.AbstractValidCode;
-import com.wl.user.domain.User;
+import org.springframework.security.core.Authentication;
 
 /**
  * 授权认证统一接口.
@@ -16,8 +16,8 @@ public interface ITokenGranter {
 	 *
 	 * @param loginDTO 授权参数
 	 * @param abstractValidCode 验证码
-	 * @return UserInfo
+	 * @return Authentication
 	 */
-	User grant(LoginDTO loginDTO, AbstractValidCode abstractValidCode);
+	Authentication grant(LoginDTO loginDTO, AbstractValidCode abstractValidCode);
 
 }

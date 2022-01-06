@@ -5,22 +5,18 @@ import com.wl.common.base.BaseEntity;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
-import java.io.Serializable;
-import java.util.Date;
-
 /**
- * 
- * @TableName user
+ * @author dile
  */
 @EqualsAndHashCode(callSuper = true)
-@TableName(value ="user")
+@TableName(value = "sys_user")
 @Data
-public class User extends BaseEntity {
+public class SysUser extends BaseEntity {
     /**
      * 用户id
      */
     @TableId(type = IdType.AUTO)
-    private Integer id;
+    private Long id;
 
     /**
      * 用户昵称
@@ -71,6 +67,11 @@ public class User extends BaseEntity {
      * 用户状态：ENABLE能登录，DISABLE不能登录
      */
     private String status;
+
+    /**
+     * 是否是管理员
+     */
+    private Boolean isAdmin;
 
     /**
      * 是否删除

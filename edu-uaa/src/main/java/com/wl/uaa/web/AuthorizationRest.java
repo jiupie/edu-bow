@@ -12,7 +12,7 @@ import com.wl.uaa.granter.ITokenGranter;
 import com.wl.uaa.granter.TokenGranterBuilder;
 import com.wl.uaa.valid.AbstractValidCode;
 import com.wl.uaa.valid.ValidBuilder;
-import com.wl.user.domain.User;
+import com.wl.user.domain.SysUser;
 import io.swagger.annotations.Api;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -35,7 +35,7 @@ public class AuthorizationRest {
         String loginType = loginDTO.getLoginType();
         ITokenGranter tokenGranter = TokenGranterBuilder.getGranter(loginType);
         AbstractValidCode valid = validBuilder.createLoginValid(Objects.requireNonNull(LoginType.findValue(loginType)));
-        User user = tokenGranter.grant(loginDTO,valid);
+        SysUser user = tokenGranter.grant(loginDTO,valid);
         return ResponseDTO.response(ResultCode.SUCCESS,user);
     }
 

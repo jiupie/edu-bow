@@ -2,7 +2,7 @@ package com.wl.user.service;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.wl.user.domain.User;
+import com.wl.user.domain.SysUser;
 
 /**
  * @author 南顾北衫
@@ -14,33 +14,33 @@ public interface UserService {
      * @param id /
      * @return /
      */
-    User getUserById(Long id);
+    SysUser getUserById(Long id);
 
     /**
      * 通过Id获取用户
      * @param userName 用户
      * @return /
      */
-    User getUserByUsername(String userName);
+    SysUser getUserByUsername(String userName);
 
     /**
      * 通过email获取用户
      * @param email 邮件
      * @return /
      */
-    User getUserByEmail(String email);
+    SysUser getUserByEmail(String email);
 
     /**
      * 通过mobile获取用户
      * @param mobile 手机号码
      * @return /
      */
-    User getUserByMobile(String mobile);
+    SysUser getUserByMobile(String mobile);
 
     /**
      * 通过mobile获取用户
      * @param page /
      * @return /
      */
-    IPage<User> getByPages(Page<User> page);
+    IPage<SysUser> getByPages(Page<SysUser> page);
 }
