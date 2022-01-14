@@ -26,7 +26,7 @@ public class UserRest {
 
     @GetMapping("getByPages")
     @ApiOperation("分页获取用户数据")
-    public ResponseDTO getByPages( PageDTO page) {
+    public ResponseDTO getByPages(PageDTO page) {
         IPage<SysUser> pages = promotionSpaceService.getByPages(new Page<SysUser>(page.getCurrent(), page.getSize()));
         return ResponseDTO.success(pages);
     }
