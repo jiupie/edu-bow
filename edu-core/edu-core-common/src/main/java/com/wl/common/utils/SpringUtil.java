@@ -28,12 +28,6 @@ public class SpringUtil implements ApplicationContextAware {
         return context.getBean(clazz);
     }
 
-    public static <T> T getBean(Class<org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder> beanId) {
-        if (beanId == null) {
-            return null;
-        }
-        return (T) context.getBean(beanId);
-    }
 
     public static <T> T getBean(String beanName, Class<T> clazz) {
         if (null == beanName || "".equals(beanName.trim())) {

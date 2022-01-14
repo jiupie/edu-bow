@@ -24,4 +24,9 @@ public class UserProviderFallback implements IUserProvider{
     public ResponseDTO<SysUser> getUserByMobile(String mobile) {
         return null;
     }
+
+    @Override
+    public ResponseDTO<SysUser> getUserByEmail(String email) {
+        return null;
+    }
 }

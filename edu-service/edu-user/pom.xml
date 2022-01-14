@@ -19,6 +19,10 @@
             <artifactId>edu-user-api</artifactId>
             <version>${edu.project.version}</version>
         </dependency>
+        <dependency>
+            <groupId>com.wl</groupId>
+            <artifactId>edu-core-mybatis</artifactId>
+        </dependency>
 
     </dependencies>
 
